@@ -49,11 +49,19 @@ const glitchChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567
 
 function generateGlitch() {
   let result = '';
-  for (let i = 0; i < 20; i++) {
-    result += glitchChars.charAt(Math.floor(Math.random() * glitchChars.length));
+  const chanceForHashtag = Math.random();
+  if (chanceForHashtag < 0.1) {
+    const randomHashtag = hashtags[Math.floor(Math.random() * hashtags.length)];
+    const hashtagWithoutHash = randomHashtag.slice(1);
+    result += hashtagWithoutHash;
+  } else {
+    for (let i = 0; i < 20; i++) {
+      result += glitchChars.charAt(Math.floor(Math.random() * glitchChars.length));
+    }
   }
   return result;
 }
+
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -66,7 +74,7 @@ export default function HomePage() {
 
     const glitchInterval = setInterval(() => {
       setGlitch(generateGlitch());
-    }, 500); // glitch effect changes every 500ms
+    }, 200); // glitch effect changes every 500ms
 
     return () => {
       clearTimeout(timer);
