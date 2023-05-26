@@ -4,7 +4,7 @@ import { extendTheme } from "@chakra-ui/react"
 const styles = {
   global: {
     body: {
-      color: "white",
+      color: "black",
       bg: "brand.500",
       fontFamily: "Blox2, Arial, sans-serif", // Use your font here
     },

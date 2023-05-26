@@ -93,17 +93,18 @@ export default function HomePage() {
   return (
     <Center height="100vh">
       <Flex flexDirection="column" alignItems="center" justifyContent="center"
-        p={6} borderWidth={1} borderRadius="md" bg="white" color="black"
+        p={6} borderWidth={1} borderRadius="md" bg="black" color="black"
         maxW={['90%', '80%', '70%', '60%']} w="full" overflow="auto">
         <Text fontSize={["3xl", "4xl", "5xl", "6xl"]}>Virtual Drug Dealer</Text>
         <Box
           w={["30px", "35px", "40px", "50px"]}
           h={["10px", "12px", "15px", "20px"]}
           borderRadius="50px"
-          bgColor="brand.400"
           marginTop="2rem"
+          background="linear-gradient(to right, pink 50%, white 50%)"
           animation={`${spin} 2s linear infinite`}
         />
+
         <Text textAlign="center" color="brand.500" marginTop="2rem" fontFamily="monospace">
           <pre>{glitch}</pre>
         </Text>
